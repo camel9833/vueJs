@@ -8,11 +8,7 @@
           href="https://vuejs.org"
           target="_blank"
         >
-<<<<<<< HEAD
-        222  Core Docs
-=======
-          123Core Docs
->>>>>>> d4eecf14b3ef9d7946e920c57a7a3d9cd024c09f
+        222  Core Docs  111
         </a>
       </li>
       <li>
