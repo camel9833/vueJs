@@ -1,27 +1,25 @@
 <template>
-  <div id="app">
-    <button @click="fetchPosts">Bring me</button>
-    <div v-for="post in posts">
-      <h1>{{post.title}}</h1>
-      <p>{{post.body}}</p>
-    </div>
+<div id="app">
+  <button @click="fetchPosts">Bring me</button>
+  <div v-for="post in posts">
+    <h1>{{post.title}}</h1>
+    <p>{{post.body}}</p>
   </div>
+</div>
 </template>
 
 <script>
-
-
 export default {
-  name: 'App',
-  data(){
+  name: 'AxiosTest',
+  data() {
     return {
-      posts:[]
+      posts: []
     }
   },
-  methods:{
-    fetchPosts(){
+  methods: {
+    fetchPosts() {
       this.axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then((response)=>{
+        .then((response) => {
           this.posts = response.data
         })
     }
