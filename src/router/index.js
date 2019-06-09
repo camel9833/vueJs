@@ -1,15 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import TodoPage from '@/components/TodoPage'
+import axiosTest from '@/components/axiosTest'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'TodoPage',
+      component: TodoPage
+    },
+    {
+      path: '/todos',
+      name: 'TodoPage',
+      component: TodoPage
+    },
+    {
+      path: '/axiosTest',
+      name: 'axiosTest',
+      component: axiosTest
     }
   ]
 })
