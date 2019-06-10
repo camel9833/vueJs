@@ -1,6 +1,7 @@
 <template>
 <div class="header">
   <nav>
+    <a>master</a>
     <a>Home</a>
     <a>Posts</a>
     <a>Contact</a>
