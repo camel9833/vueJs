@@ -2,9 +2,9 @@
 <div class="container">
   <h2>Todo List</h2>
   <div class="input-group" style="margin-bottom:10px;">
-    <input type="text" class="form-control" placeholder="할일을 입력하세요" v-model="name" @keyup.enter="createTodo(name)">
+    <input type="text" class="form-control" placeholder="할일을 입력하세요">
     <span class="input-group-btn">
-      <button class="btn btn-default" type="button" @click="createTodo(name)">추가</button>
+      <button class="btn btn-default" type="button">추가</button>
     </span>
   </div>
   <ul class="list-group">
@@ -15,7 +15,7 @@
           더보기<span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <li><a href="#" @click="deleteTodo(index)">삭제</a></li>
+          <li><a href="#">삭제</a></li>
         </ul>
       </div>
     </li>
@@ -28,42 +28,20 @@ export default {
   name: 'TodoPage',
   data() {
     return {
-      name: null,
-      todos: [],
-    }
-  },
-  methods: {
-    deleteTodo(todo) {
-      var vm = this
-      this.todos.forEach(function(_todo, i, obj) {
-        if (_todo.id === todo.id) {
-          vm.$http.delete('http://todos.garam.xyz/api/todos/' + todo.id)
-            .then((result) => {
-              obj.splice(i, 1)
-            })
+      todos: [{
+          name: '청소'
+        },
+        {
+          name: '블로그 쓰기'
+        },
+        {
+          name: '밥먹기'
+        },
+        {
+          name: '안녕'
         }
-      })
-    },
-    createTodo(name) {
-      if (name != null) {
-        var vm = this;
-        this.$http.defaults.headers.post['Content-Type'] = 'application/json';
-        this.$http.post('http://todos.garam.xyz/api/todos', {
-          name: name
-        }).then((result) => {
-          vm.todos.push(result.data);
-        })
-        this.name = null
-      }
-    },
-    getTodos() {
-      var vm = this;
-      this.$http.get('http://todos.garam.xyz/api/todos')
-        .then((result) => {
-          vm.todos = result.data.data;
-        })
+      ]
     }
   }
-
 }
 </script>
