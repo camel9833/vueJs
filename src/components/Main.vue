@@ -25,6 +25,10 @@
       <a href="http://localhost:8080/#/ClassBinding" target="_self"> ClassBinding
       </a>
     </li>
+    <li>
+      <a href="http://localhost:8080/#/Paging" target="_self"> Paging
+      </a>
+    </li>
   </ul>
 
 </div>
