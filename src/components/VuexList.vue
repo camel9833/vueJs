@@ -2,7 +2,7 @@
 <div id="fruits-list">
   <h1>Fruits Name</h1>
   <ul>
-    <li v-for="fruit in fruits">
+    <li v-for="fruit in upperCaseFruits">
       {{ fruit.name }}
     </li>
   </ul>
@@ -10,12 +10,16 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
+
 export default {
-  // Removed Props
   computed: {
-    fruits() {
-      return this.$store.state.fruits
-    }
+    ...mapState([  // ES6 - Spread
+      'fruits'
+    ]),
+    ...mapGetters([  // ES6 - Spread
+      'upperCaseFruits'
+    ])
   }
 }
 </script>

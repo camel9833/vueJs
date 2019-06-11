@@ -10,12 +10,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
-  // Removed props
   computed: {
-    fruits() {
-      return this.$store.state.fruits
-    }
+    ...mapState([  // ES6 - Spread
+      'fruits'
+    ])
   }
 }
 </script>

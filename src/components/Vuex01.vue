@@ -6,12 +6,14 @@
     <fruits-list></fruits-list>
     <fruits-price></fruits-price>
   </div>
+  <btn-discount></btn-discount>
 </div>
 </template>
 
 <script>
 import FruitsList from './VuexList.vue';
 import FruitsPrice from './VuexPrice.vue';
+import BtnDiscount from './VuexBtn.vue';
 
 export default {
   name: 'app',
@@ -20,7 +22,8 @@ export default {
   },
   components: {
     'fruits-list': FruitsList,
-    'fruits-price': FruitsPrice
+    'fruits-price': FruitsPrice,
+    'btn-discount': BtnDiscount
   }
 }
 </script>

@@ -15,13 +15,27 @@ export const store = new Vuex.Store({
       { name: 'Pineapple', price: 80 }
     ]
   },
-  getters: {
+getters: {
     upperCaseFruits: state => {
       return state.fruits.map(fruit => {
         return {
-          name: `- ${fruit.name.toUpperCase()}`  // ES6 - Template Strings
+          name: `- ${fruit.name.toUpperCase()}` // ES6 - Template Strings
         }
       });
     }
+  },
+  mutations: {
+    discountPrice(state, payload) {
+      state.fruits.forEach(fruit => {
+        fruit.price *= (100 - payload.rate) / 100;
+      });
+    }
+  },
+  actions: {
+    discountPrice(context, payload) {
+      setTimeout(() => {
+        context.commit('discountPrice', payload);
+      }, 1000);
+    }
   }
-});
+  });
