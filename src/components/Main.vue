@@ -2,7 +2,7 @@
 <div class="init">
   <my-header></my-header>
 
-  <h1>{{ msg }}</h1>
+  <h3>{{ msg }}</h3>
 
   <ul>
     <li>
@@ -37,7 +37,7 @@ export default {
   name: 'init',
   data() {
     return {
-      msg: 'App body'
+      msg: '2. contents'
     }
   },
   components: {

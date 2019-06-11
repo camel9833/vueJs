@@ -1,7 +1,7 @@
 <template>
 <div class="header">
+  <h3>1. header (master)</h3>
   <nav>
-    <a>master</a>
     <a>Home</a>
     <a>Posts</a>
     <a>Contact</a>
