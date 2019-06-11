@@ -6,28 +6,24 @@
 
   <ul>
     <li>
-      <a href="http://localhost:8080" target="_self"> Main
-      </a>
+      <router-link to="/" tag="li" active-class="current-page" exact><a href>Main</a></router-link>
     </li>
     <li>
-      <a href="http://localhost:8080/#/AxiosTest" target="_self"> Axios
-      </a>
+      <router-link to="/AxiosTest" tag="li" active-class="current-page" exact><a href>Axios</a></router-link>
     </li>
     <li>
-      <a href="http://localhost:8080/#/todos" target="_self"> Todos
-      </a>
+      <router-link to="/todos" tag="li" active-class="current-page" exact><a href>Todos</a></router-link>
     </li>
     <li>
-      <a href="http://localhost:8080/#/PropsChild" target="_self"> PropsChild
-      </a>
+      <router-link to="/PropsChild" tag="li" active-class="current-page" exact><a href>PropsChild</a></router-link>
     </li>
     <li>
-      <a href="http://localhost:8080/#/ClassBinding" target="_self"> ClassBinding
-      </a>
+      <router-link to="/ClassBinding" tag="li" active-class="current-page" exact><a href>ClassBinding</a></router-link>
     </li>
-    <li>
-      <a href="http://localhost:8080/#/Paging" target="_self"> Paging
-      </a>
+    <li <router-link to="/Paging" tag="li" active-class="current-page" exact><a href>Paging</a></router-link>
+    </li>
+    </li>
+    <li <router-link to="/Vuex01" tag="li" active-class="current-page" exact><a href>Vuex01</a></router-link>
     </li>
   </ul>
 
@@ -52,7 +48,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 ul {
   list-style-type: none;
   padding: 0;
