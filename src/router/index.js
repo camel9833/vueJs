@@ -6,6 +6,8 @@ import AxiosTest from '@/components/AxiosTest'
 import Props from '@/components/Props'
 import PropsChild from '@/components/PropsChild'
 import ClassBinding from '@/components/ClassBinding'
+import Paging from '@/components/Paging'
+import Vuex01 from '@/components/Vuex01'
 
 Vue.use(Router)
 
@@ -39,6 +41,16 @@ export default new Router({
       path: '/classBinding',
       name: 'ClassBinding',
       component: ClassBinding
+    },
+    {
+      path: '/paging',
+      name: 'Paging',
+      component: Paging
+    },
+    {
+      path: '/vuex01',
+      name: 'Vuex01',
+      component: Vuex01
     }
   ]
 })
