@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/components/Main'
 import TodoPage from '@/components/TodoPage'
-import AxiosTest from '@/components/AxiosTest'
+import Sample from '@/components/Sample'
 import Props from '@/components/Props'
 import PropsChild from '@/components/PropsChild'
 import ClassBinding from '@/components/ClassBinding'
@@ -23,9 +23,9 @@ export default new Router({
       component: TodoPage
     },
     {
-      path: '/axiosTest',
-      name: 'AxiosTest',
-      component: AxiosTest
+      path: '/sample',
+      name: 'Sample',
+      component: Sample
     },
     {
       path: '/props',

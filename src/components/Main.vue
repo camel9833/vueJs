@@ -9,7 +9,7 @@
       <router-link to="/" tag="li" active-class="current-page" exact><a href>Main</a></router-link>
     </li-->
     <li>
-      <router-link to="/axiosTest" tag="li" active-class="current-page" exact><a href>Axios</a></router-link>
+      <router-link to="/sample" tag="li" active-class="current-page" exact><a href>Sample</a></router-link>
     </li >
 
     <li>
