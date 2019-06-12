@@ -5,7 +5,7 @@ import { actions }   from './actions';
 
 Vue.use(Vuex);
 
-const moduleA = {
+const module01 = {
 //namespaced: true,
 state: {
   fruits: [
@@ -28,11 +28,18 @@ getters: {
 }
 }
 
+const module02 = {
+  state: {
+    posts: []
+  }
+}
+
 export const store = new Vuex.Store({
   state: {},
   mutations: mutations,
   actions: actions,
   modules: {
-    s01: moduleA
+    s01: module01,
+    s02: module02
   }
 });

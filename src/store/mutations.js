@@ -1,6 +1,3 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex);
 
 export const mutations = {
 
@@ -8,6 +5,11 @@ export const mutations = {
       state.s01.fruits.map(fruit => {
       fruit.price *= (100 - payload.discountRate) / 100;
     });
+  },
+
+
+  fetchPosts(state, payload) {
+      state.s02.posts = payload;
   }
 
 /*

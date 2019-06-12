@@ -1,5 +1,5 @@
 <template>
-<div class="btntmp" @click="discountPrice()">DISCOUNT PRICE</div>
+<div class="btntmp" @click="fetchPosts()">DISCOUNT PRICE</div>
 </template>
 
 <script>
@@ -11,6 +11,11 @@ export default {
       this.$store.dispatch({
         type: 'discountPrice',
         discountRate: 10
+      })
+    },
+    fetchPosts() {
+      this.$store.dispatch({
+        type: 'fetchPosts'
       })
     }
   }

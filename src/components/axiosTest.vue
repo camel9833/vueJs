@@ -10,18 +10,11 @@
 
 <script>
 export default {
-  name: 'AxiosTest',
-  data() {
-    return {
-      posts: []
-    }
-  },
   methods: {
     fetchPosts() {
-      this.axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => {
-          this.posts = response.data
-        })
+      this.$store.dispatch({
+        type: 'fetchPosts'
+      })
     }
   }
 }
