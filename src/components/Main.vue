@@ -9,11 +9,11 @@
       <router-link to="/" tag="li" active-class="current-page" exact><a href>Main</a></router-link>
     </li-->
     <li>
-      <router-link to="/AxiosTest" tag="li" active-class="current-page" exact><a href>Axios</a></router-link>
+      <router-link to="/axiosTest" tag="li" active-class="current-page" exact><a href>Axios</a></router-link>
     </li >
 
     <li>
-      <router-link to="/Vuex01" tag="li" active-class="current-page" exact><a href>Vuex01</a></router-link>
+      <router-link to="/vuex01" tag="li" active-class="current-page" exact><a href>Vuex01</a></router-link>
     </li>
 
     <li>
@@ -21,15 +21,15 @@
     </li>
 
     <li>
-      <router-link to="/PropsChild" tag="li" active-class="current-page" exact><a href>PropsChild</a></router-link>
+      <router-link to="/propsChild" tag="li" active-class="current-page" exact><a href>PropsChild</a></router-link>
     </li>
 
     <li>
-      <router-link to="/ClassBinding" tag="li" active-class="current-page" exact><a href>ClassBinding</a></router-link>
+      <router-link to="/classBinding" tag="li" active-class="current-page" exact><a href>ClassBinding</a></router-link>
     </li>
 
     <li>
-      <router-link to="/Paging" tag="li" active-class="current-page" exact><a href>Paging</a></router-link>
+      <router-link to="/paging" tag="li" active-class="current-page" exact><a href>Paging</a></router-link>
     </li>
 
   </ul>
