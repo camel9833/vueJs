@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { mutations } from './mutations';
+import { actions }   from './actions';
 
 Vue.use(Vuex);
 
@@ -16,30 +18,21 @@ state: {
   ]
 },
 getters: {
-    upperCaseFruits: state => {
-      return state.fruits.map(fruit => {
-        return {
-          name: `${fruit.name.toUpperCase()}` // ES6 - Template Strings
-        }
-      });
-    }
-  },
-  mutations: {
-    discountPrice(state, payload) {
-      state.fruits.forEach(fruit => {
-        fruit.price *= (100 - payload.discountRate) / 100;
-      });
-    }
-  },
-  actions: {
-    discountPrice({commit}, payload) {
-      commit('discountPrice', payload);
-    }
+  upperCaseFruits: state => {
+    return state.fruits.map(fruit => {
+      return {
+        name: `${fruit.name.toUpperCase()}` // ES6 - Template Strings
+      }
+    });
   }
+}
 }
 
 export const store = new Vuex.Store({
-  modules:{
+  state: {},
+  mutations: mutations,
+  actions: actions,
+  modules: {
     s01: moduleA
   }
 });

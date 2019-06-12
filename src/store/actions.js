@@ -1,3 +1,6 @@
+import Vue from 'vue';
+import Vuex from 'vuex';
+Vue.use(Vuex);
 
 export const actions = {
 
@@ -5,4 +8,4 @@ export const actions = {
     return context.commit('discountPrice', payload);
   }
 
-} 
+}
