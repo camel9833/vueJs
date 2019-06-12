@@ -10,13 +10,20 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapState([  // ES6 - Spread
-      'fruits'
-    ])
+
+    fruits() {
+      return this.$store.state.s01.fruits;
+    }
+
+    /*
+    ...mapState({ // ES6 - Spread
+      fruits: 'fruits'
+    })
+    */
   }
 }
 </script>

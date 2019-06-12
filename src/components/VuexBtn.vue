@@ -1,23 +1,44 @@
 <template>
-<div class="btntmp" @click="discountPrice(discountData)">DISCOUNT PRICE</div>
+<div class="btntmp" @click="discountPrice()">DISCOUNT PRICE</div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+// import {mapActions} from 'vuex';
 
 export default {
-  data() {
-    return {
-      discountData: {
-        rate: 20
-      }
-    }
-  },
   methods: {
-    ...mapActions([
-      'discountPrice'
-    ])
+    discountPrice() {
+      this.$store.dispatch({
+        type: 'discountPrice',
+        discountRate: 10
+      })
+    }
   }
+
+
+  /*
+  discountPrice() {
+    // 액션 호출
+    this.$store.dispatch({
+      type: 'discountPrice',
+      discountRate: 20
+    })
+  }
+  */
+  /*
+    data() {
+      return {
+        discountData: {
+          rate: 20
+        }
+      }
+    },
+    methods: {
+      ...mapActions({
+        price: 'discountPrice'
+      })
+    }
+    */
 }
 </script>
 
