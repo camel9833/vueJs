@@ -31,6 +31,14 @@ getters: {
 const module02 = {
   state: {
     posts: []
+  },
+  getters: {
+    postlist: state => {
+      return state.posts.contacts
+    },
+    postlength: state => {
+      return state.posts.contacts
+    }
   }
 }
 

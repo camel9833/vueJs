@@ -7,16 +7,9 @@ export const mutations = {
     });
   },
 
-
+ // Search
   fetchPosts(state, payload) {
       state.s02.posts = payload;
   }
 
-/*
-  discountPrice: function(state, payload) {
-    state.fruits.forEach(fruit => {
-      fruit.price *= (100 - payload.discountRate) / 100;
-    });
-  }
-*/
 }
