@@ -10,7 +10,7 @@ export const actions = {
   fetchPosts: function(context, payload) {
     return axios.get('http://sample.bmaster.kro.kr/contacts')
       .then((response) => {
-        console.log(response.data);
+//        console.log(response.data);
         context.commit('fetchPosts', response.data);
       })
   }
