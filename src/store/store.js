@@ -1,44 +1,68 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { mutations } from './mutations';
-import { actions }   from './actions';
+import {
+  mutations
+} from './mutations';
+import {
+  actions
+} from './actions';
 
 Vue.use(Vuex);
 
+//m1
 const module01 = {
-//namespaced: true,
-state: {
-  fruits: [
-      { name: 'Apple', price: 30 },
-      { name: 'Banana', price: 40 },
-      { name: 'Mango', price: 50 },
-      { name: 'Orange', price: 60 },
-      { name: 'Tomato', price: 70 },
-      { name: 'Pineapple', price: 80 }
-  ]
-},
-getters: {
-  upperCaseFruits: state => {
-    return state.fruits.map(fruit => {
-      return {
-        name: `${fruit.name.toUpperCase()}` // ES6 - Template Strings
+  //namespaced: true,
+  state: {
+    fruits: [{
+        name: 'Apple',
+        price: 30
+      },
+      {
+        name: 'Banana',
+        price: 40
+      },
+      {
+        name: 'Mango',
+        price: 50
+      },
+      {
+        name: 'Orange',
+        price: 60
+      },
+      {
+        name: 'Tomato',
+        price: 70
+      },
+      {
+        name: 'Pineapple',
+        price: 80
       }
-    });
+    ]
+  },
+  getters: {
+    upperCaseFruits: state => {
+      return state.fruits.map(fruit => {
+        return {
+          name: `${fruit.name.toUpperCase()}` // ES6 - Template Strings
+        }
+      });
+    }
   }
 }
-}
 
+//m2
 const module02 = {
   state: {
     posts: []
   },
   getters: {
     postlist: state => {
-      return state.posts.contacts
+      return state.posts
     }
   }
 }
 
+// Root
 export const store = new Vuex.Store({
   state: {},
   mutations: mutations,

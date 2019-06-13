@@ -9,14 +9,14 @@
       <router-link to="/" tag="li" active-class="current-page" exact><a href>Main</a></router-link>
     </li-->
     <li>
-      <router-link to="/sample" tag="li" active-class="current-page" exact><a href>Sample</a></router-link>
+      <router-link to="/sample" tag="li" active-class="current-page" exact><a href>Search</a></router-link>
     </li >
 
-    <li>
+    <!--li>
       <router-link to="/vuex01" tag="li" active-class="current-page" exact><a href>Vuex01</a></router-link>
     </li>
 
-    <li>
+    < li>
       <router-link to="/todos" tag="li" active-class="current-page" exact><a href>Todos</a></router-link>
     </li>
 
@@ -30,7 +30,7 @@
 
     <li>
       <router-link to="/paging" tag="li" active-class="current-page" exact><a href>Paging</a></router-link>
-    </li>
+    </li-->
 
   </ul>
 

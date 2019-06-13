@@ -2,7 +2,7 @@
 <div id="app">
   <!-- 조회버튼 -->
   <div style="float:right;">
-    <button @click="searchBtnClick">Search</button>
+    <input name="query" v-model="searchQuery"> <button @click="searchBtnClick">Search</button>
   </div>
 
   <!-- 조회 결과 -->
@@ -10,20 +10,20 @@
     <table>
       <tr>
         <td><input type="checkbox" id="checkAll" v-model="checkAll" @click="selectAll" /></td>
-        <td>No</td>
+        <!-- td>No</td -->
         <td>ID</td>
-        <td>TEL</td>
-        <td>ADDRESS</td>
         <td>NAME</td>
+        <td>CITY</td>
+        <td>Tel</td>
         <td>Action</td>
       </tr>
-      <tr v-for="(p, index) in searchlist" :key="p.no">
+      <tr v-for="(p, index) in searchlist" :key="p.id">
         <td><input type="checkbox" id="check01" :value="p" v-model="checkValue" /></td>
-        <td>{{ (pageNum)*10+index+1 }}</td>
-        <td>{{ p.no }}</td>
-        <td>{{ p.tel }}</td>
-        <td>{{ p.address }}</td>
+        <!--td>{{ (pageNum)*10+index+1 }}</td -->
+        <td>{{ p.id }}</td>
         <td>{{ p.name }}</td>
+        <td>{{ p.address.city }}</td>
+        <td>{{ p.phone }}</td>
 
         <!-- 수정/삭제 버튼 -->
         <div class="btn-group pull-right" style="font-size: 12px; line-height: 1;">
@@ -32,8 +32,8 @@
               더보기<span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="#" @click="updateBtnClick">수정</a></li>
-              <li><a href="#" @click="deleteBtnClick">삭제</a></li>
+              <li><a @click="updateBtnClick(p)">수정</a></li>
+              <li><a @click="deleteBtnClick(p)">삭제</a></li>
             </ul>
           </td>
         </div>
@@ -68,14 +68,16 @@ export default {
       pageSize: 10,
       // checkbox
       checkValue: [], //체크박스 value
-      checkAll: false //체크박스 전체선택
+      checkAll: false, //체크박스 전체선택
+      // 조회 변수
+      searchQuery: ''
     }
   },
 
   computed: {
     // stat
     posts() {
-      return this.$store.state.s02.posts.contacts;
+      return this.$store.state.s02.posts;
     },
     // getters
     postlist() {
@@ -113,9 +115,11 @@ export default {
     // Paging
     nextPage() {
       this.pageNum += 1;
+      this.checkAll = false;
     },
     prevPage() {
       this.pageNum -= 1;
+      this.checkAll = false;
     },
     // checkbox checkAll
     selectAll() {
@@ -132,15 +136,19 @@ export default {
       })
     },
     // 수정버튼 클릭
-    updateBtnClick() {
+    updateBtnClick(p) {
       alert("update");
     },
     // 삭제버튼 클릭
-    deleteBtnClick() {
+    deleteBtnClick(p) {
+      var no = p.id;
+
       if (confirm("정말삭제하시겠습니까?") == true) {
-        this.searchBtnClick();
+        this.$store.dispatch('fetchDelete', {
+          deleteId: no
+        });
       }
-    },
+    }
 
   }
 }
