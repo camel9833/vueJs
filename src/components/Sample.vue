@@ -1,29 +1,48 @@
 <template>
 <div id="app">
-
-  <div>
+  <!-- 조회버튼 -->
+  <div style="float:right;">
     <button @click="searchBtnClick">Search</button>
   </div>
 
+  <!-- 조회 결과 -->
   <div>
     <table>
       <tr>
-        <td>NO</td>
+        <td><input type="checkbox" id="checkAll" v-model="checkAll" @click="selectAll" /></td>
+        <td>No</td>
         <td>ID</td>
         <td>TEL</td>
         <td>ADDRESS</td>
         <td>NAME</td>
+        <td>Action</td>
       </tr>
       <tr v-for="(p, index) in searchlist" :key="p.no">
+        <td><input type="checkbox" id="check01" :value="p" v-model="checkValue" /></td>
         <td>{{ (pageNum)*10+index+1 }}</td>
         <td>{{ p.no }}</td>
         <td>{{ p.tel }}</td>
         <td>{{ p.address }}</td>
         <td>{{ p.name }}</td>
+
+        <!-- 수정/삭제 버튼 -->
+        <div class="btn-group pull-right" style="font-size: 12px; line-height: 1;">
+          <td>
+            <button type="button" class="btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              더보기<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#" @click="updateBtnClick">수정</a></li>
+              <li><a href="#" @click="deleteBtnClick">삭제</a></li>
+            </ul>
+          </td>
+        </div>
+
       </tr>
     </table>
   </div>
 
+  <!-- Paging  -->
   <div class="btn-cover">
     <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">
       이전
@@ -33,6 +52,8 @@
       다음
     </button>
   </div>
+  <br />
+  <span>checkValue: {{ checkValue }}</span>
 
 </div>
 </template>
@@ -42,8 +63,12 @@ export default {
 
   data() {
     return {
+      // Paging
       pageNum: 0,
-      pageSize: 10
+      pageSize: 10,
+      // checkbox
+      checkValue: [], //체크박스 value
+      checkAll: false //체크박스 전체선택
     }
   },
 
@@ -66,7 +91,7 @@ export default {
       }
       return totalcnt;
     },
-    // list paging
+    // list Paging
     searchlist() {
       const start = this.pageNum * this.pageSize,
         end = start + this.pageSize;
@@ -74,7 +99,7 @@ export default {
         return this.postlist.slice(start, end);
       }
     },
-    // current page count
+    // current Paging count
     pageCount() {
       let listLeng = this.totalcnt,
         listSize = this.pageSize,
@@ -85,17 +110,38 @@ export default {
   },
 
   methods: {
-    searchBtnClick() {
-      this.$store.dispatch({
-        type: 'fetchPosts'
-      })
-    },
+    // Paging
     nextPage() {
       this.pageNum += 1;
     },
     prevPage() {
       this.pageNum -= 1;
-    }
+    },
+    // checkbox checkAll
+    selectAll() {
+      if (!this.checkAll) {
+        this.checkValue = this.searchlist;
+      } else {
+        this.checkValue = [];
+      }
+    },
+    // 조회버튼 클릭
+    searchBtnClick() {
+      this.$store.dispatch({
+        type: 'fetchPosts'
+      })
+    },
+    // 수정버튼 클릭
+    updateBtnClick() {
+      alert("update");
+    },
+    // 삭제버튼 클릭
+    deleteBtnClick() {
+      if (confirm("정말삭제하시겠습니까?") == true) {
+        this.searchBtnClick();
+      }
+    },
+
   }
 }
 </script>
