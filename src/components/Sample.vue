@@ -2,7 +2,7 @@
 <div id="app">
   <!-- 조회버튼 -->
   <div style="float:right;">
-    <input name="query" v-model="searchQuery"> <button @click="searchBtnClick">Search</button>
+    USER ID<input name="query" v-model="searchQuery"> <button @click="searchBtnClick">Search</button>
   </div>
 
   <!-- 조회 결과 -->
@@ -12,18 +12,19 @@
         <td><input type="checkbox" id="checkAll" v-model="checkAll" @click="selectAll" /></td>
         <!-- td>No</td -->
         <td>ID</td>
-        <td>NAME</td>
-        <td>CITY</td>
-        <td>Tel</td>
+        <td>USER ID</td>
+        <td>Title</td>
+        <td>body</td>
         <td>Action</td>
       </tr>
       <tr v-for="(p, index) in searchlist" :key="p.id">
         <td><input type="checkbox" id="check01" :value="p" v-model="checkValue" /></td>
         <!--td>{{ (pageNum)*10+index+1 }}</td -->
         <td>{{ p.id }}</td>
-        <td>{{ p.name }}</td>
-        <td>{{ p.address.city }}</td>
-        <td>{{ p.phone }}</td>
+        <td>{{ p.userId }}</td>
+        <td>{{ p.title }}</td>
+        <td>{{ p.body }}</td>
+
 
         <!-- 수정/삭제 버튼 -->
         <div class="btn-group pull-right" style="font-size: 12px; line-height: 1;">
