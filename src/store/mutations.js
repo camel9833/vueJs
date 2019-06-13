@@ -9,7 +9,11 @@ export const mutations = {
 
   // 1. Search
   fetchPosts(state, payload) {
-    state.s02.posts = payload;
+    console.log(payload.response +" / "+ payload.search);
+    let a = payload.response;
+//    a.filter
+
+    state.s02.posts = payload.response;
   },
 
   // 2. Delete

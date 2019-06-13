@@ -9,9 +9,12 @@ export const actions = {
 
   // 1. Search
   fetchPosts: function(context, payload) {
-    return axios.get('http://jsonplaceholder.typicode.com/users')
+    return axios.get('https://jsonplaceholder.typicode.com/users')
       .then((response) => {
-        context.commit('fetchPosts', response.data);
+        context.commit('fetchPosts', {
+          response: response.data,
+          search: payload.searchTxt
+        });
       })
   },
 

@@ -131,9 +131,9 @@ export default {
     },
     // 조회버튼 클릭
     searchBtnClick() {
-      this.$store.dispatch({
-        type: 'fetchPosts'
-      })
+      this.$store.dispatch('fetchPosts',{
+        searchTxt: this.searchQuery
+      });
     },
     // 수정버튼 클릭
     updateBtnClick(p) {
