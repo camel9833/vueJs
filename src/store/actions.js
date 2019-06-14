@@ -9,12 +9,10 @@ export const actions = {
 
   // 1. Search
   fetchPosts: function(context, payload) {
-
     var uri = 'https://jsonplaceholder.typicode.com/posts';
 
-
     if (payload.searchTxt > 0) {
-        uri = uri + "?userId=" + payload.searchTxt;
+      uri = uri + "?userId=" + payload.searchTxt;
     }
 
     return axios.get(uri)
