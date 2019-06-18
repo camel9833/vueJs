@@ -8,9 +8,17 @@ import PropsChild from '@/components/PropsChild'
 import ClassBinding from '@/components/ClassBinding'
 import Paging from '@/components/Paging'
 import Vuex01 from '@/components/Vuex01'
+import MixinTest from '@/components/MixinTest'
+import SampleExtend from '@/components/SampleExtend'
+
+
 
 Vue.use(Router)
-
+/*
+const requireAuth = () => (to,from,next) => {
+  next('/classBinding');
+};
+*/
 export default new Router({
   routes: [{
       path: '/',
@@ -25,7 +33,8 @@ export default new Router({
     {
       path: '/sample',
       name: 'Sample',
-      component: Sample
+      component: Sample,
+//      beforEnter: requireAuth
     },
     {
       path: '/props',
@@ -51,6 +60,18 @@ export default new Router({
       path: '/vuex01',
       name: 'Vuex01',
       component: Vuex01
-    }
+    },
+    {
+      path: '/mixintest',
+      name: 'MixinTest',
+      component: MixinTest
+    },
+    {
+      path: '/sampleextend',
+      name: 'SampleExtend',
+      component: SampleExtend
+    },
+
+
   ]
 })

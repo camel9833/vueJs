@@ -6,7 +6,9 @@ import router from './router'
 import axios from 'axios'
 
 import VueAxios from 'vue-axios'
-import { store } from './store/store'
+import {
+  store
+} from './store/store'
 import Vuex from 'vuex'
 import 'es6-promise/auto'
 
@@ -14,6 +16,9 @@ Vue.use(Vuex)
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 Vue.config.devtools = true
+
+import common from './mixins/common'
+Vue.mixin(common);
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,5 +1,6 @@
 <template>
-<div id="app">
+<div id="sample">
+  <my-header></my-header>
   <!-- 조회버튼 -->
   <div style="float:right;">
     USER ID<input name="query" v-model="searchQuery"> <button @click="searchBtnClick">Search</button>
@@ -60,8 +61,10 @@
 </template>
 
 <script>
-export default {
+import Header from './Header.vue'
 
+export default {
+  name: 'sample',
   data() {
     return {
       // Paging
@@ -71,8 +74,12 @@ export default {
       checkValue: [], //체크박스 value
       checkAll: false, //체크박스 전체선택
       // 조회 변수
-      searchQuery: ''
+      searchQuery: '',
+      path: 'sample'
     }
+  },
+  components: {
+    'my-header': Header
   },
 
   computed: {
@@ -132,7 +139,7 @@ export default {
     },
     // 조회버튼 클릭
     searchBtnClick() {
-      this.$store.dispatch('fetchPosts',{
+      this.$store.dispatch('fetchPosts', {
         searchTxt: this.searchQuery
       });
     },

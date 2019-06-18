@@ -2,15 +2,15 @@
 <div class="init">
   <my-header></my-header>
 
-  <h3>{{ msg }}</h3>
+  <h4>{{ msg }}</h4>
 
   <ul>
     <!-- li>
       <router-link to="/" tag="li" active-class="current-page" exact><a href>Main</a></router-link>
     </li-->
-    <li>
+    <!-- li>
       <router-link to="/sample" tag="li" active-class="current-page" exact><a href>Search</a></router-link>
-    </li >
+    </li -->
 
     <!--li>
       <router-link to="/vuex01" tag="li" active-class="current-page" exact><a href>Vuex01</a></router-link>
@@ -44,7 +44,7 @@ export default {
   name: 'init',
   data() {
     return {
-      msg: '2. contents'
+      msg: 'Home 화면 입니다.'
     }
   },
   components: {
