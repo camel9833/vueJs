@@ -14,7 +14,7 @@ export const mutations = {
   },
 
   // 2. Delete
-  fetchDelete(state, payload) {
+  sampleDelete(state, payload) {
     let a = state.s02.posts;
 
     const itemToFind = a.find(function(item) {

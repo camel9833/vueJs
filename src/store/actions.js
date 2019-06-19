@@ -25,8 +25,8 @@ export const actions = {
   },
 
   // 2. Delete
-  fetchDelete: function(context, payload) {
-    context.commit('fetchDelete', payload);
+  sampleDelete: function(context, payload) {
+    context.commit('sampleDelete', payload);
     /*    return axios.delete('http://sample.bmaster.kro.kr/contacts')
           .then((response) => {
             context.commit('fetchDelete', payload);

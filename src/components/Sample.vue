@@ -152,7 +152,7 @@ export default {
       var no = p.id;
 
       if (confirm("정말삭제하시겠습니까?") == true) {
-        this.$store.dispatch('fetchDelete', {
+        this.$store.dispatch('sampleDelete', {
           deleteId: no
         });
       }
