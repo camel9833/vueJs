@@ -20,6 +20,9 @@ Vue.config.devtools = true
 import common from './mixins/common'
 Vue.mixin(common);
 
+import VModal from 'vue-js-modal'
+Vue.use(VModal, { dynamic: true })
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

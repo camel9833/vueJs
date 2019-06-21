@@ -32,6 +32,10 @@ export default {
         {
           content: 'Extend',
           link: '/sampleextend'
+        },
+        {
+          content: 'Modal popup',
+          link: '/modal'
         }
       ]
 

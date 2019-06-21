@@ -10,7 +10,7 @@ import Paging from '@/components/Paging'
 import Vuex01 from '@/components/Vuex01'
 import MixinTest from '@/components/MixinTest'
 import SampleExtend from '@/components/SampleExtend'
-
+import Modal from '@/components/Modal'
 
 
 Vue.use(Router)
@@ -71,7 +71,11 @@ export default new Router({
       name: 'SampleExtend',
       component: SampleExtend
     },
-
+    {
+      path: '/modal',
+      name: 'Modal',
+      component: Modal
+    },
 
   ]
 })
