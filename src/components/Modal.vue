@@ -4,6 +4,7 @@
         <modals-container />
     </div>
 </template>
+
 <script>
 import DelPopup from './Modalpopup.vue'
 export default {
@@ -24,3 +25,5 @@ doc_del_rendar(){
 }
 }
 </script>
+
+    
