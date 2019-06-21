@@ -19,7 +19,7 @@
         </ul>
       </div>
     </li>
-  </ul>
+  </ul> 
 </div>
 </template>
 
